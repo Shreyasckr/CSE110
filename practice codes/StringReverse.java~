@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class StringReverse{
+    public static void main(String [] args){
+        Scanner abc = new Scanner(System.in);
+        String myStr = abc.nextLine();
+        char ch;
+        String revStr = ""; // stores the reverse of the string
+        for(int idx = myStr.length()-1; idx >= 0; idx--){
+            ch = myStr.charAt(idx);
+            revStr += ch;
+        }
+        System.out.println(revStr);
+        
+        String revStr2 = ""; // stores the reverse of the string
+        for(int idx = 0; idx < myStr.length(); idx++){
+            int newIdx = (myStr.length()-1)-idx;
+            ch = myStr.charAt(newIdx);
+            revStr2 += ch;
+        }
+        System.out.println(revStr2);
+        
+        String revStr3 = ""; // stores the reverse of the string
+        for(int idx = 0; idx < myStr.length(); idx++){
+            ch = myStr.charAt(idx);
+            revStr3 = ch + revStr3;
+        }
+        System.out.println(revStr3);
+    }
+}

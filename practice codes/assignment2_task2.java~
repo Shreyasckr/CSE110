@@ -1,0 +1,14 @@
+import java.util.Scanner;
+public class assignment2_task2{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Age : ");
+        int age = sc.nextInt();
+        System.out.println("Electricity consumed : ");
+        int ec = sc.nextInt();
+        Double totalCharge = ec * 15;
+        if (age < 18){
+            System.out.println("Final Bill : " + totalCharge * 0.8 + "Taka");
+        }
+    }
+}

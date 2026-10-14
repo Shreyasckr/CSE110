@@ -1,0 +1,21 @@
+public class smallestNumRec{
+    public static void main(String[] args){
+        int[] arr = {1,9,2,8,3,7,4,6,5};
+        System.out.println(smallest(arr, 0));
+    }
+    
+    public static int smallest(int[] a, int n){
+        if(n==a.length-1){
+            return a[n];
+        }
+        else{
+            int min = smallest(a, n+1);
+            if(min>a[n]){
+                return a[n];
+            }
+            else{
+                return min;
+            }
+        }
+    }
+}

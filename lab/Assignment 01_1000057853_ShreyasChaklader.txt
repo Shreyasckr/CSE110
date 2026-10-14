@@ -1,0 +1,81 @@
+Question 1
+
+
+public class task1{
+    public static void main(String [] args){
+        int minutes = 3456789;
+        int total_days = minutes / 1440;
+        int years = total_days / 365;
+        int days = total_days % 365;
+        System.out.println(minutes + " minutes is approximately " + years + " years and " + days + " days");
+    }
+}
+
+
+
+Question 2
+
+
+public class task2{
+    public static void main(String [] args){
+        int a = 2;
+        int b = 5;
+        int c = 8;
+        int d = ((2*b)*((c-a)/3)) + 7;
+        System.out.println(d);
+    }
+}    
+      
+
+
+Question 3
+
+public class task3{
+    public static void main(String [] args){
+        int student_id = 1000054943;
+        int x = student_id % 1000054900;
+        int a = x / 10;  //a=4
+        int b = x % 10;  //b=3
+        a = a + b;
+        b = a - b;
+        a = a - b;
+        System.out.println("10000549" + a + b);
+    }
+}    
+        
+
+
+Question 4
+
+
+
+public class task4{
+    public static void main(String [] args){
+        int length = 10;
+        int width = 13;
+        Double otibhuj = Math.sqrt(10 * 10 + 13 * 13);
+        System.out.println(otibhuj);
+    }
+}    
+ 
+
+Question 5
+
+
+
+public class task5{
+    public static void main(String [] args){
+        Double a = 4.5;
+        Double b = 9.5;
+        Double c = Math.sqrt(a * a + b * b);
+        Double sinA = a / c;
+        Double sinB = b / c;
+        Double cosA = b / c;
+        Double cosB = a / c;
+        System.out.println("Sin A = " + sinA);
+        System.out.println("Cos A = " + cosA);
+        System.out.println("Sin B = " + sinB);
+        System.out.println("Cos B = " + cosB);
+    }
+}    
+    

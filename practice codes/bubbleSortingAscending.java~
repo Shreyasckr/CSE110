@@ -1,0 +1,17 @@
+import java.util.Arrays;
+public class bubbleSortingAscending{
+    public static void main(String[] args){
+        int[] arr1 = {34, 3, 77, 7, 10, -3, 0};
+        for(int i = 0;i<arr.length-1;i++){
+            for(int j = 0;j<arr.length-i-1:j++){
+                int min = i;
+                if(arr[j]<arr[i]){
+                    int temp = arr[j];
+                    arr[j] = arr[i];
+                    arr[i] = temp;
+                }
+            }
+        }
+        System.out.println(Arrays.toString(arr));
+    }
+}

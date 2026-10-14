@@ -1,0 +1,73 @@
+//input:4
+//output:
+//XOXO
+//OXOX
+//XOXO
+//OXOX    
+
+//import java.util.Scanner;
+//public class pracprob {
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//        int n = sc.nextInt();
+//        for (int i = 1; i <= n; i++) {
+//            if (i % 2 == 0) {
+//                for (int j = 1; j <= n; j++) {
+//                    if (j % 2 == 0) {
+//                        System.out.print("X");
+//                    } else {
+//                        System.out.print("O");
+//                    }
+//                }
+//                System.out.println();
+//            } else {
+//                for (int j = 1; j <= n; j++) {
+//                    if (j % 2 == 0) {
+//                        System.out.print("O");
+//                    } else {
+//                        System.out.print("X");
+//                    }
+//                }
+//                System.out.println();
+//            }
+//        }
+//    }
+//}
+//
+
+
+
+import java.util.Scanner;
+public class pracprob{
+    public static void main(String []args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for(int i=1;i<=n;i++){
+            if(i%2==0){
+                for(int j=1;j<=n;j++){
+                    if(j%2==0){
+                        System.out.print("X");
+                    }
+                    else{
+                        System.out.print("O");
+                    }
+                }
+                System.out.println();
+            }
+            else{
+                for(int j=1;j<=n;j++){
+                    if(j%2==0){
+                        System.out.print("O");
+                    }
+                    else{
+                        System.out.print("X");
+                    }
+                }
+                System.out.println();
+            }
+        }
+    }
+}
+
+
+

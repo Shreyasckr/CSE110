@@ -1,0 +1,16 @@
+public class PracticeProblem5{
+    public static void main(String[] args){
+        int decimal = toDecimal("1010");
+//        String hex = toHex(decimal);
+//        System.out.println(hex);
+    }
+    public static int toDecimal(String s){
+        int n = s.length();
+        int dec = 0;
+        for(int i = 0;i<s.length;i++){
+            int digit = (int)s.charAt(i) - '0';
+            dec += Math.pow(digit, n-1);
+            n--;
+        }
+    }
+}

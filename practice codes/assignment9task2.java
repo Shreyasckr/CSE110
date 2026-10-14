@@ -1,0 +1,17 @@
+import java.util.Scanner;
+public class assignment9task2{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int x = power(8,4);
+        System.out.println(x);
+    }
+    
+    public static int power(int a, int b){
+        if(b==0){
+            return 1;
+        }
+        else{
+            return a * power(a, b-1);
+        }
+    }
+}

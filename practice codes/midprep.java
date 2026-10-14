@@ -1,0 +1,59 @@
+import java.util.Scanner;
+public class midprep{
+    public static void main(String[]args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Start: ");
+        int st = sc.nextInt();
+        System.out.print("End: ");
+        int end = sc.nextInt();
+        int temp = st;
+        int num = 0;
+        for(int i = st;st<=end;st++){
+            int div = 0;
+            for(int j = 1;j<=st;j++){
+                if(st%j==0){
+                    div++;
+                }
+            }
+            if(div>2){
+                num++;
+            }
+        }
+        if(num>0){
+            int r = end - temp;
+            if(r%num==0){
+                for(int k = temp; k <= end; k++){
+                    int div = 0;
+                    for(int j = 1; j <= k; j++){
+                        if(k % j == 0){
+                            div++;
+                        }
+                    }
+                    if(div > 2){
+                        System.out.print(k + " ");
+                    }
+                }
+                System.out.println();
+                System.out.println("Congratulations! The treasure is yours");
+            }
+            else{
+                for(int k = temp; k <= end; k++){
+                    int div = 0;
+                    for(int j = 1; j <= k; j++){
+                        if(k % j == 0){
+                            div++;
+                        }
+                    }
+                    if(div > 2){
+                        System.out.print(k + " ");
+                    }
+                }
+                System.out.println();
+                System.out.println("Close! But not quite.");
+            }
+        }
+        else{
+            System.out.println("Too far off.");
+        }
+    }
+}

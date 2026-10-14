@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class assignment03_task5{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Enter the N-digit vault code.");
+        int code = scanner.nextInt();
+        
+        // Count digits
+        int n = 0;
+        int temp = code;
+        while (temp > 0) {
+            n++;
+            temp = temp / 10;
+        }
+        
+        // Calculate initial divider (10^(N-1))
+        int divider = 1;
+        int count = n;
+        while (count > 1) {
+            divider = divider * 10;
+            count--;
+        }
+        
+        // Extract and print digits
+        temp = code;
+        while (divider > 0) {
+            int digit = temp / divider;
+            System.out.print(digit);
+            
+            temp = temp % divider;
+            divider = divider / 10;
+            
+            if (divider > 0) {
+                System.out.print(", ");
+            }
+        }
+    }
+}

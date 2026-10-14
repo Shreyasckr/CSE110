@@ -1,0 +1,151 @@
+//task1
+
+
+import java.util.Scanner;
+public class assignment8task1{
+    public static boolean isPrime(int n){  //a
+        if(n<=1){
+            return false;
+        }
+        else{
+            int div = 0;
+            for(int i = 2;i<n;i++){
+                if(n%i==0){
+                    div++;
+                }
+            }
+            if(div==0){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+    }
+    
+    public static boolean isPerfect(int n){  //b
+        if(n<=1){
+            return false;
+        }
+        else{
+            int divSum = 0;
+            for(int i = 1;i<n;i++){
+                if(n%i==0){
+                    divSum += i;
+                }
+            }
+            if(divSum==n){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+    }
+    
+    public static int special_sum(int n){  //c
+        int sum = 0;
+        for(int i = 2;i<n;i++){
+            if(isPrime(i)){
+                sum += i;
+            }
+            if(isPerfect(i)){
+                sum += i;
+            }
+        }
+        return sum;
+    }
+    
+    public static void main(String[] args){
+        boolean check1 = isPrime(7);
+        System.out.println(check1); 
+        boolean check2 = isPerfect(33);
+        System.out.println(check2);
+        int result = special_sum(8);
+        System.out.println(result);
+    }
+}
+
+
+
+//task2
+
+
+public class assignment8task2{
+    public static void main(String[] args){
+        showDiamond(5); 
+    }
+    public static void showDots(int n){   //a
+        for (int i = 1; i <= n; i++){
+            System.out.print(".");
+        }
+    }
+    public static void show_palindrome(int n){   //b
+        for(int i = 1; i <= n; i++){
+            System.out.print(i);
+        }
+        for(int i = n - 1; i >= 1; i--){
+            System.out.print(i);
+        }
+    }
+    
+    public static void showDiamond(int n){    //c
+      for(int row = 1; row <= n; row++){
+            showDots(n - row);
+            show_palindrome(row);
+            showDots(n - row); 
+            System.out.println(); 
+      }
+        for(int row = n - 1; row >= 1; row--){
+            showDots(n - row);
+            show_palindrome(row);
+            showDots(n - row);
+            System.out.println();
+        }
+    }
+}
+
+
+
+//task3
+
+
+
+import java.util.Scanner;
+public class assignment8task3{
+    public static void main(String[] args){
+       calcYearlyTax();
+    }
+    
+    public static double calcTax(int a, int b){
+        double tax = 0;
+        if(a<18){
+            tax = 0.0;
+        }
+        else{
+            if(b<10000){
+                tax = 0.0;
+            }
+            else if(b<=20000 && b>=10000){
+                tax = b*0.07;
+            }
+            else{
+                tax = b*0.14;
+            }
+        }
+        return tax;
+    }
+    
+    public static void calcYearlyTax(){
+        Scanner sc = new Scanner(System.in);
+        int age = sc.nextInt();
+        double tt = 0.0;
+        for(int i = 1;i<=12;i++){
+            int income = sc.nextInt();
+            double t = calcTax(age,income);
+            tt += t;
+            System.out.printf("Month%d tax: %.1f\n", i, t);
+        }
+        System.out.printf("Total Yearly Tax: %.1f\n", tt);
+    }
+}

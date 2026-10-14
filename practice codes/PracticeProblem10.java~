@@ -1,0 +1,9 @@
+public class PracticeProblem10{
+    public static void main(String[] args){
+        double t = convertToCm(16);
+        System.out.println(t + " cm");
+    }
+    public static double converToCm(double n){
+        return n*2.54;
+    }
+}

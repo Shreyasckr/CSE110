@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class assignment6task3 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        
+        int maxPin = -1;
+        
+        for (int i = 0; i < s.length() - 1; i++) {
+            char c1 = s.charAt(i);
+            char c2 = s.charAt(i + 1);
+            
+            // Check if both are digits by checking their ASCII values
+            if (c1 >= '0' && c1 <= '9' && c2 >= '0' && c2 <= '9') {
+                // Convert characters to numbers
+                int digit1 = c1 - '0'; // '0' is 48 in ASCII, '1' is 49, etc.
+                int digit2 = c2 - '0';
+                int num = digit1 * 10 + digit2;
+                
+                if (num > maxPin) {
+                    maxPin = num;
+                }
+            }
+        }
+        
+        if (maxPin == -1) {
+            System.out.println("2-Digit PIN: 0");
+        } else {
+            System.out.println("2-Digit PIN: " + maxPin);
+        }
+    }
+}

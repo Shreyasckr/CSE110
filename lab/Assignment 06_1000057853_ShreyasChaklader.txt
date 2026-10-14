@@ -1,0 +1,219 @@
+Question 1
+
+
+import java.util.Scanner;
+public class assignment6task1{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Message: ");
+        String msg = sc.nextLine();
+        int maxPin = 0;
+        int Num = 0;
+        int digit = 0;
+        char c;
+        for(int i = 0;i<msg.length();i++){
+            c = msg.charAt(i);
+            if(c>='0' && c<='9'){
+                Num = Num * 10 + (c - 48);
+                digit++;
+                if(digit == 2){
+                    if(Num > maxPin){
+                        maxPin = Num;
+                    }
+                    Num = c - 48;
+                    digit = 1;
+                }
+            }
+            else{
+                Num = 0;
+                digit = 0;
+            }
+        }
+        System.out.println("2-Digit PIN: " + maxPin);
+    }
+}
+
+
+
+Question 2
+
+
+
+import java.util.Scanner;
+public class assignment6task2{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        char c;
+        String newS = "";
+        String vowel = "";
+        for(int i = 0;i<s.length();i++){
+            c = s.charAt(i);
+            if(c == 'a' || c == 'e' ||c == 'i' || c == 'o' || c == 'u' || c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U'){
+                vowel += c;
+            }
+        }
+        int vowels = vowel.length() - 1;
+        for(int j = 0; j < s.length(); j++){
+            char c2 = s.charAt(j);
+            if(c2 == 'a' || c2 == 'e' || c2 == 'i' || c2 == 'o' || c2 == 'u' || c2 == 'A' || c2 == 'E' || c2 == 'I' || c2 == 'O' || c2 == 'U'){
+                newS += vowel.charAt(vowels);
+                vowels--;
+            }
+            else{
+                newS += c2;
+            }
+        }
+        System.out.println(newS);
+    }
+}
+
+
+
+Question 3
+
+
+
+import java.util.Scanner;
+public class assignment6task3{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String s1 = "";
+        int maxLength = 0;
+        int power = 0;
+        char c;
+        System.out.println("Names of the spells:");
+        while(true){
+            String s2 = sc.nextLine();
+            if(s2.equals("stop")){
+                break;
+            }
+            String s3 = "";
+            for(int i = 0;i<s2.length();i++){
+                c = s2.charAt(i);
+                if((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')){
+                    if(c >= 'a' && c <= 'z') {
+                        c = (char)(c - 32);
+                    }
+                    s3 += c;
+                }
+            }
+            if(s3.length() > maxLength){
+                maxLength = s3.length();
+                s1 = s3;
+                power = 0;
+                for(int i = 0; i<s3.length(); i++) {
+                    power += s3.charAt(i);
+                }
+            }
+        }
+        if(maxLength>0){
+            System.out.println("Largest Spell : " + s1 + " Power Level : " + power);
+        }
+    }
+}
+
+
+
+Question 4
+
+
+
+import java.util.Scanner;
+public class assignment6task4{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Fan message: ");
+        String msg = sc.nextLine();
+        char c;
+        String lowermsg = "";
+        for(int i = 0;i<msg.length();i++){
+            c = msg.charAt(i);
+            if(c >= 'A' && c <= 'Z'){
+                lowermsg +=(char)(c + 32);
+            } 
+            else{
+                lowermsg += c;
+            }
+        }
+        int madrid = 0;
+        for(int i=0;i<lowermsg.length()-5; i++){
+            if (lowermsg.charAt(i) == 'm' && lowermsg.charAt(i+1) == 'a' && lowermsg.charAt(i+2) == 'd' && lowermsg.charAt(i+3) == 'r' && lowermsg.charAt(i+4) == 'i' && lowermsg.charAt(i+5) == 'd'){
+                madrid++;
+            }
+        }
+        int city = 0;
+        for(int i = 0; i < lowermsg.length()-3; i++){
+            if (lowermsg.charAt(i) == 'c' && lowermsg.charAt(i+1) == 'i' && lowermsg.charAt(i+2) == 't' && lowermsg.charAt(i+3) == 'y'){
+                city++;
+            }
+        }
+        boolean hasClose = false;
+        for(int i = 0;i<lowermsg.length()-4;i++){
+            if (lowermsg.charAt(i) == 'c' && lowermsg.charAt(i+1) == 'l' && lowermsg.charAt(i+2) == 'o' && lowermsg.charAt(i+3) == 's' && lowermsg.charAt(i+4) == 'e'){
+                hasClose = true;
+                break;
+            }
+        }
+        boolean hasDestroy = false;
+        for (int i = 0;i<lowermsg.length()-6;i++) {
+            if (lowermsg.charAt(i) == 'd' && lowermsg.charAt(i+1) == 'e' && lowermsg.charAt(i+2) == 's' && lowermsg.charAt(i+3) == 't' && lowermsg.charAt(i+4) == 'r' && lowermsg.charAt(i+5) == 'o' && lowermsg.charAt(i+6) == 'y'){
+                hasDestroy = true;
+                break;
+            }
+        }
+        String support;
+        if(madrid>city){
+            support ="Madrid Supporter";
+        }
+        else if(city>madrid){
+            support ="City Supporter";
+        }
+        else{
+            support ="Neutral";
+        }
+        String expectation;
+        if(hasClose){
+            expectation = "Fan expect a close match";
+        } 
+        else if(hasDestroy){
+            expectation = "Fan expects a dominating victory!";
+        } 
+        else{
+            expectation = "Hard to read the fan sentiment";
+        }
+        System.out.println(support);
+        System.out.println(expectation);
+    }
+}
+
+
+
+
+Question 5
+
+
+
+import java.util.Scanner;
+public class assignment6task5{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = 0;
+        String s = sc.nextLine();
+        char c;
+        int i = s.length()-1;
+        while(i >= 0 && s.charAt(i) == ' '){
+            i--;
+        }
+        for(;i>=0;i--){
+            c = s.charAt(i);
+            if(c != ' '){
+                n++;
+            }
+            else{
+                break;
+            }
+        }
+        System.out.println(n);
+    }
+}

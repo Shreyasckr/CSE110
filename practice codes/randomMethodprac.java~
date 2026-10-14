@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class randomMethodprac{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int[] arr = {2, 3, 6, 5, 8, 7};
+        System.out.println(balancedChecker(arr))
+    }
+    public static boolean balancedChecker(int[] arr){
+        int oddSum = 0;
+        int evenSum = 0;
+        for(int i = 0; i < arr.length; i++){
+            if(arr[i]%2==0){
+                evenSum = arr[i];
+            } 
+            else{
+                oddSum = arr[i];
+            }
+        }
+        if(oddSum == evenSum){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+}

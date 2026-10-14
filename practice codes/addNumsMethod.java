@@ -1,0 +1,24 @@
+import java.util.Scanner;
+public class addNumsMethod{
+    public static void adder1(int x, int y){
+        int sum = x + y;
+        System.out.println(sum);
+    }
+    public static int adder2(int x, int y){
+        int sum = x + y;
+        return sum;
+    }
+    
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        //case-1
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        adder1(a, b);
+        //case-2
+        adder1(5, 5);    // void thake, mane kisu return hoy na
+        //case-3
+        int ans = adder2(2, 5);  //kaaj kore akta int value pass kore,oita ans a aisha boshe 
+        System.out.println(ans);
+    }
+}

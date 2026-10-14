@@ -1,0 +1,158 @@
+Question 1
+
+
+import java.util.Scanner;
+public class assignment4task1{
+    public static void main(String[]args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter starting number: ");
+        int start = sc.nextInt();
+        System.out.print("Enter ending number: ");
+        int end = sc.nextInt();
+        for(int i=start;i<=end;i++){
+            int temp = i;
+            int digits = 0;
+            while(temp != 0){
+                digits++;
+                temp /= 10;
+            }
+            temp = i;
+            int sum = 0;
+            while(temp != 0){
+                int digit = temp % 10;
+                int power = 1;
+                for(int j=1;j<=digits;j++){
+                    power *= digit;
+                }
+                sum += power;
+                temp /= 10;
+            }
+            if (sum == i){
+                System.out.println(i);
+            }
+        }
+    }
+}
+
+
+
+
+Question 2
+
+
+
+import java.util.Scanner;
+public class assignment4task2{
+    public static void main(String[]args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter number of students to check: ");
+        int n = sc.nextInt();
+        for(int i=1;i<=n;i++){
+            System.out.println("Enter student ID: ");
+            int id = sc.nextInt();
+            if(id==1){
+                System.out.println("Lucky ID");
+            }
+            else{
+                int temp = id;
+                for (;temp>1;temp=temp/2){
+                    if (temp % 2 != 0){
+                        break;
+                    }
+                }
+                if(temp==1){
+                    System.out.println("Lucky ID");
+                } 
+                else{
+                    System.out.println("Not Lucky");
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+Question 3
+
+
+
+
+import java.util.Scanner;
+public class assignment4task3{
+    public static void main(String[]args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter number of days: ");
+        int days = sc.nextInt();
+        for (int i=1;i<=days;i++) {
+            System.out.println("Enter sales for Day " + i + ": ");
+            int total_sale = 0;
+            for (int j=1;j<= 3;j++){
+                int sales = sc.nextInt();
+                total_sale += sales;
+            }
+            double tax = 0.0;
+            if (total_sale>= 500) {
+                tax = total_sale * 0.10;
+            } else if (total_sale>= 200) {
+                tax = total_sale * 0.05;
+            } else if (total_sale>= 100) {
+                tax = total_sale * 0.02;
+            }
+            double final_sale = total_sale + tax;
+            System.out.println("Day " + i + ": Total Sales with Tax: " + final_sale);
+        }
+    }
+}
+
+
+
+
+
+Question 4
+
+
+
+
+import java.util.Scanner;
+public class assignment4task4{
+    public static void main(String[]args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Number of Menbers: ");
+        int Member = sc.nextInt();
+        for(int i=1;i<=Member;i++){
+            System.out.print("Exercise for Member-"+i+": ");
+            int Exercise = sc.nextInt();
+            if(Exercise>3){
+                System.out.println("(Can't do more than 3 exercise)");
+                Exercise = 3;
+            }
+            int count = 0;
+            double sum = 0;
+            double totalSum = 0;
+            double avg;
+            for(int j=1;j<=Exercise;j++){
+                System.out.print("Exercise-"+j+": ");
+                double exercise = sc.nextDouble();
+                totalSum += exercise;
+                if(exercise>350){
+                exercise += exercise*0.5;
+                }
+                if(exercise<200){
+                count++;
+                }
+                sum += exercise;
+            }
+            if(totalSum>400*Exercise){
+            sum+=50*Exercise;
+            }
+            avg = sum/Exercise;
+            if(count==Exercise){
+            avg -= avg*0.1;
+            }
+            System.out.printf("Average calories earned per day for Member-" + i + ": %.3f\n", avg);
+        }
+    }
+}

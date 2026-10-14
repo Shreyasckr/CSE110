@@ -1,0 +1,12 @@
+import java.util.Scaner;
+public class strWSq1{
+    public static void main(String[] args);{
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        char c;
+        for(int i = s.length();i<=0;i--){
+        c = charAt(i);
+        System.out.print(c);
+        }
+    }
+}

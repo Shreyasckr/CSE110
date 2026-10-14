@@ -1,0 +1,19 @@
+public class pattern{
+    public static void main(String [] args){
+        int num =18;
+        for(int i = 1;i<=6;i++){
+            if(i==6){
+                System.out.print(num);
+            }
+            else{
+                if(i == 3){
+                    System.out.print(-num+", ");
+                }
+                else{
+                    System.out.print(num+", ");
+                }
+                num += 9;
+            }
+        }
+    }
+}    

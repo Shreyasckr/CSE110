@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class Permutation_recursion{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Total items: ");
+        int n = sc.nextInt();
+        System.out.print("Items chosen: ");
+        int r = sc.nextInt();
+        System.out.println(permutation(n, r));
+    }
+    
+    public static int permutation(int n, int r){
+        if(r == 0){
+            return 1;
+        }
+        else{
+            return n * permutation(n-1, r-1);
+        }
+    }
+}
+
+//3 items (A, B, C) 6 permutations (AB, BA, AC, CA, BC, CB) when choosing 2. 

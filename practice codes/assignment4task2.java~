@@ -1,0 +1,25 @@
+import java.util.Scanner;
+public class assignment4task2{
+    public sttatic void main(String[]args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter number of students to check: ");
+        int n = sc.nextInt();
+        for(int i=1;i<=n;i++){
+            System.out.println("Enter student ID: " + i);
+            int id = sc.nextInt();
+            if(n==1){
+                System.out.println("Lucky ID");
+            }
+            int power = 2;
+            for(int j=1;j<=20;j++){
+                if(n%power==0){
+                    System.out.println("Lucky ID");
+                }
+                else{
+                    System.out.println("Not Lucky");
+                }
+                power *= 2;
+            }
+        }
+    }
+}

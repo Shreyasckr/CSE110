@@ -1,0 +1,20 @@
+public class recursionPrac{
+    public static void main(String[] args){
+        int[] arr = {10, 40, 60, 50, 20};
+        System.out.println(largest(int[] arr, 0));
+    }
+    
+    public static int largest(int[] arr, int n){
+        if(n==arr.length){
+            return arr[arr.length];
+        }
+        else{
+            if(largest(arr, 0)>largest(arr, n+1)){
+                return largest(arr, 0);
+            }
+            else{
+                return largest(arr, n+1);
+            }
+        }
+    }
+}

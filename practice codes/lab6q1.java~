@@ -1,0 +1,19 @@
+public class lab6q1{
+    public static void main(String[] args){
+        String code = "9Abe-Coal-69UK-420i";
+        System.out.print("Redeemable code: ");
+        char ch;
+        String newCode = "";
+        for(int i = 0 ; i < code.length() ; i++){
+            ch = code.charAt(i);
+            if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' || ){
+                ch=(char)(ch-32);
+            }
+            else if(ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U' || ){
+                ch=(char)(ch+32);
+            }
+            newCode += ch;
+        }
+        System.out.print("Redeemable code: "+newCode);
+    }
+}

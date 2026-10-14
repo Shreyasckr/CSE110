@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class recursiveFact{
+    public static void main(String[] args){
+      System.out.println(factR(5));  
+    }
+    
+    public static int factR(int n){
+        if(n == 1){
+            return 1;
+        }
+        else{
+            return n * factR(n-1)
+        }
+    }
+}

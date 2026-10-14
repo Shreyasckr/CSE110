@@ -1,0 +1,221 @@
+Question 1
+
+import java.util.Scanner;
+public class assignment03_task1{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for(int i = 0; i <= n; i++){
+            if(i % 5 == 0 && i % 3 != 0){
+                System.out.println(i);
+            }
+        }
+    }
+}
+
+
+Question 2
+
+
+import java.util.Scanner;
+public class assignment03_task2{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Please Enter number of Herbs (H): ");
+        int h = sc.nextInt();
+        System.out.print("Please Enter number of Crystals (C): ");
+        int c = sc.nextInt();
+        int potion = 0;
+        while (h >= 3 && c >= 2){
+            h -= 3;
+            c -= 2;
+            potion++;
+            System.out.println("Potion-" + potion + " created");
+            System.out.println("Remaining Herbs: " + h + " Remaining Crystals: " + c);
+        }
+        System.out.println("Potions Created: " + potion);
+        if(potion % 2 == 0){
+            System.out.println("Stable Brew");
+        } 
+        else{
+            System.out.println("Volatile Elixir");
+        }
+    }
+}    
+
+
+Question 3
+
+
+import java.util.Scanner;
+public class assignment03_task3{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Energy (E): ");
+        int E = sc.nextInt();
+        System.out.println("Number of River (N): ");
+        int N = sc.nextInt();
+        for(int i = 1;i <= N; i++){
+            System.out.println("Enter River Distance D" + i + ": ");
+            int D = sc.nextInt();
+            if(D < 5){
+                E -= 2;
+            }
+            else{
+                E -= (D/2);
+            }
+            if(E < 0){
+            System.out.println("Tired at River " + i);
+            }
+        }
+        System.out.println("All Done");
+        System.out.println(E + " energy Left");
+    }
+}
+
+
+
+Question 4
+
+
+import java.util.Scanner;
+public class assignment03_task4{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        while(num > 0){
+            int digit = num % 10;
+            System.out.print(digit);
+            num /= 10;
+            if(num > 0){
+                System.out.print(", ");
+            }
+        }
+    }
+}
+
+
+Question 5
+
+
+import java.util.Scanner;
+public class assignment03_task5{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the N-digit vault code: ");
+        int code = sc.nextInt();
+        int n = 0;
+        int temp = code;
+        while(temp > 0){
+            n++;
+            temp = temp / 10;
+        }
+        int divider = 1;
+        while (n > 1){
+            divider *= 10;
+            n--;
+        }
+        while (divider > 0){
+            int digit = code / divider;
+            System.out.print(digit);
+            code %= divider;
+            divider /= 10;
+            if (divider > 0) {
+                System.out.print(", ");
+            }
+        }
+    }
+}
+
+
+
+Question 6
+
+
+
+import java.util.Scanner;
+public class assignment03_task6{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int divisors = 0;
+        for(int i = 1; i <= num; i++){
+            if(num % i == 0){
+                divisors += 1;
+            }
+        }
+        if(divisors == 2){
+            System.out.println(num + " is a prime number");
+        }
+        else{
+            System.out.println(num + " is not a prime number");
+        }
+        int Sum = 0;
+        for(int i = 1; i < num; i++){
+            if(num % i == 0){
+                Sum += i;
+            }
+        }
+        if(Sum == num){
+            System.out.println(num + " is a perfect number");
+        } 
+        else{
+            System.out.println(num + " is not a perfect number");
+        }
+    }
+}
+
+
+
+Question 7
+
+
+
+public class assignment03_task7{
+    public static void main(String [] args){
+        int sum = 0;
+        for(int i = 1;i <= 600;i++){
+            if (i % 7 == 0 && i % 9 == 0){
+                sum += 0;
+            }
+            else if(i % 7 == 0 || i % 9 == 0){
+                sum += i;
+            }
+        }
+        System.out.println(sum);
+    }
+}    
+
+
+
+
+Question 8
+
+
+
+import java.util.Scanner;
+public class assignment03_task8{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter an integer: ");
+        int N = sc.nextInt();
+        int p = 0;
+        int n = 0;
+        for(int i = 1; i <= N; i++){
+            System.out.print("Enter number " + i + ": ");
+            int num = sc.nextInt();
+            if(num >= 0){
+                p++;
+            } 
+            else{
+                n++;
+            }
+        }
+        System.out.println(p + " Non-negative Numbers");
+        System.out.println(n + " Negative Numbers");
+    }
+}
+
+
+
+

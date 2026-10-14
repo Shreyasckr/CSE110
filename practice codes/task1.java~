@@ -1,0 +1,9 @@
+public class task1{
+    public static void main(String [] args){
+        int minutes = 3456789;
+        int total_days = minutes / 1440;
+        int years = total_days / 365;
+        int days = total_days % 365;
+        System.out.println(minutes + "minutes is approximately" + years + "years and" + days + "days");
+    }
+}

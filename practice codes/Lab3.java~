@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Lab3 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Number of Days: ");
+        int days = sc.nextInt();
+        
+        int power = 40;
+        
+        for(int day = 1; day <= days; day++) {
+            if(day % 3 == 0) {
+                power -= 45;
+            } else if(day % 5 == 0) {
+                power += 25;
+            } else {
+                power += 10;
+            }
+            
+            if(power > 500) {
+                power -= 50;
+            }
+            
+            if(power < 0) {
+                System.out.println("Blackout on Day " + day);
+                return;
+            }
+        }
+        
+        System.out.println("Final Power: " + power);
+    }
+}
